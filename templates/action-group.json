@@ -31,30 +31,12 @@
         "copy": [
           {
             "name": "emailReceivers",
-            "count": "${length(split(',', parameters('alertEmailReceivers')['names']))}",
+            "count": "${length(split(',', parameters('alertEmailReceivers')[copyIndex('emailReceivers')].names))}",
             "input": {
-              "name": "[parameters('alertEmailReceivers')[copyIndex('emailReceivers')].name]",
-              "emailAddress": "[parameters('alertEmailReceivers')[copyIndex('emailReceivers')].emailAddress]"
+              "name": "${element(split(',', parameters('alertEmailReceivers')[copyIndex('emailReceivers')].names), count.index)}",
+              "emailAddress": "${element(split(',', parameters('alertEmailReceivers')[copyIndex('emailReceivers')].emails), count.index)}"
             }
           }
-//          ,
-//          {
-//            "name": "smsReceivers",
-//            "count": "[length(parameters('alertSmsReceivers'))]",
-//            "input": {
-//              "name": "[parameters('alertSmsReceivers')[copyIndex('smsReceivers')].name]",
-//              "countryCode": "[parameters('alertSmsReceivers')[copyIndex('smsReceivers')].countryCode]",
-//              "phoneNumber": "[parameters('alertSmsReceivers')[copyIndex('smsReceivers')].phoneNumber]"
-//            }
-//          },
-//          {
-//            "name": "webhookReceivers",
-//            "count": "[length(parameters('alertWebhookReceivers'))]",
-//            "input": {
-//              "name": "[parameters('alertWebhookReceivers')[copyIndex('webhookReceivers')].name]",
-//              "serviceUri": "[parameters('alertWebhookReceivers')[copyIndex('webhookReceivers')].serviceUri]"
-//            }
-//          }
         ]
       }
     }
