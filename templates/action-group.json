@@ -2,10 +2,10 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "alertName": {
+    "groupName": {
       "type": "string"
     },
-    "alertShortName": {
+    "groupShortName": {
       "type": "string"
     },
     "alertEmailReceivers": {
@@ -20,13 +20,13 @@
   },
   "resources": [
     {
-      "name": "[parameters('alertName')]",
+      "name": "[parameters('groupName')]",
       "type": "microsoft.insights/actionGroups",
       "apiVersion": "2017-04-01",
       "location": "[parameters('location')]",
       "tags": {},
       "properties": {
-        "groupShortName": "[parameters('alertShortName')]",
+        "groupShortName": "[parameters('groupShortName')]",
         "enabled": true,
         "copy": [
           {
