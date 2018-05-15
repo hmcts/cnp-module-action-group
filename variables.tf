@@ -10,19 +10,19 @@ variable "subscription" {
   type = "string"
 }
 
-variable "resourcegroupName" {
+variable "resourcegroup_name" {
   type = "string"
 }
 
-variable "alertName" {
+variable "alert_name" {
   type = "string"
 }
 
-variable "alertShortName" {
+variable "alert_short_name" {
   type = "string"
 }
 
-variable "alertEmailReceivers" {
+variable "alert_email_receivers" {
   "type" = "map"
   default = {
     names = "John Smith,Jane Smith"
@@ -30,7 +30,7 @@ variable "alertEmailReceivers" {
   }
 }
 
-variable "alertSmsReceivers" {
+variable "alert_sms_receivers" {
   "type" = "list"
   description = <<EOF
 example
@@ -48,7 +48,7 @@ example
 EOF
 }
 
-variable "alertWebhookReceivers" {
+variable "alert_webhook_receivers" {
   "type" = "list"
   description = <<EOF
 example
