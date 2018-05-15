@@ -31,7 +31,8 @@ variable "alert_email_receivers" {
 }
 
 variable "alert_sms_receivers" {
-  "type" = "list"
+  "type" = "map"
+  default = {}
   description = <<EOF
 example
 [
@@ -49,7 +50,8 @@ EOF
 }
 
 variable "alert_webhook_receivers" {
-  "type" = "list"
+  "type" = "map"
+  default = {}
   description = <<EOF
 example
 [
