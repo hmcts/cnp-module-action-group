@@ -14,11 +14,11 @@ variable "resourcegroup_name" {
   type = "string"
 }
 
-variable "alert_name" {
+variable "group_name" {
   type = "string"
 }
 
-variable "alert_short_name" {
+variable "group_short_name" {
   type = "string"
 }
 
@@ -38,6 +38,7 @@ variable "alert_email_receivers" {
 
 variable "alert_sms_receivers" {
   "type" = "list"
+  default = []
   description = <<EOF
 example
 [
@@ -56,6 +57,7 @@ EOF
 
 variable "alert_webhook_receivers" {
   "type" = "list"
+  default = []
   description = <<EOF
 example
 [
