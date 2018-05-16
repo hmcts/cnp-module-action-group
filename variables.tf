@@ -14,25 +14,30 @@ variable "resourcegroup_name" {
   type = "string"
 }
 
-variable "group_name" {
+variable "alert_name" {
   type = "string"
 }
 
-variable "group_short_name" {
+variable "alert_short_name" {
   type = "string"
 }
 
 variable "alert_email_receivers" {
-  "type" = "map"
-  default = {
-    names = "John Smith,Jane Smith"
-    emails = "john@smith.org,jane@smith.org"
-  }
+  "type" = "list"
+  default = [
+    {
+      name = "John Smith"
+      email = "john@smith.org"
+    },
+    {
+      name = "Jane Smith"
+      email = "jane@smith.org"
+    }
+  ]
 }
 
 variable "alert_sms_receivers" {
-  "type" = "map"
-  default = {}
+  "type" = "list"
   description = <<EOF
 example
 [
@@ -50,8 +55,7 @@ EOF
 }
 
 variable "alert_webhook_receivers" {
-  "type" = "map"
-  default = {}
+  "type" = "list"
   description = <<EOF
 example
 [
