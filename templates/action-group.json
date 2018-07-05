@@ -24,6 +24,10 @@
     "location": {
       "type": "string",
       "defaultValue": "global"
+    },
+    "env": {
+      "type": "string",
+      "defaultValue": "sandbox"
     }
   },
   "resources": [
