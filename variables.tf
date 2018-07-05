@@ -18,7 +18,11 @@ variable "group_name" {
   type = "string"
 }
 
-variable "group_short_name" {
+variable "alert_name" {
+  type = "string"
+}
+
+variable "alert_short_name" {
   type = "string"
 }
 
