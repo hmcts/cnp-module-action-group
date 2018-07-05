@@ -8,14 +8,21 @@
     "alertShortName": {
       "type": "string"
     },
-    "alertEmailReceivers": {
-      "type": "array"
+    "emailReceiverName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the email receiver"
+      }
     },
-    "alertSmsReceivers": {
-      "type": "array"
+    "emailReceiverAddress": {
+      "type": "string",
+      "metadata": {
+        "description": "Email address of the receiver"
+      }
     },
-    "alertWebhookReceivers": {
-      "type": "array"
+    "location": {
+      "type": "string",
+      "defaultValue": "global"
     }
   },
   "resources": [
@@ -28,33 +35,14 @@
       "properties": {
         "groupShortName": "[parameters('alertShortName')]",
         "enabled": true,
-        "copy": [
+        "smsReceivers": [],
+        "emailReceivers": [
           {
-            "name": "emailReceivers",
-            "count": "[length(parameters('alertEmailReceivers'))]",
-            "input": {
-              "name": "[parameters('alertEmailReceivers')[copyIndex('emailReceivers')].name]",
-              "emailAddress": "[parameters('alertEmailReceivers')[copyIndex('emailReceivers')].emailAddress]"
-            }
-          },
-          {
-            "name": "smsReceivers",
-            "count": "[length(parameters('alertSmsReceivers'))]",
-            "input": {
-              "name": "[parameters('alertSmsReceivers')[copyIndex('smsReceivers')].name]",
-              "countryCode": "[parameters('alertSmsReceivers')[copyIndex('smsReceivers')].countryCode]",
-              "phoneNumber": "[parameters('alertSmsReceivers')[copyIndex('smsReceivers')].phoneNumber]"
-            }
-          },
-          {
-            "name": "webhookReceivers",
-            "count": "[length(parameters('alertWebhookReceivers'))]",
-            "input": {
-              "name": "[parameters('alertWebhookReceivers')[copyIndex('webhookReceivers')].name]",
-              "serviceUri": "[parameters('alertWebhookReceivers')[copyIndex('webhookReceivers')].serviceUri]"
-            }
+            "name": "[parameters('emailReceiverName')]",
+            "emailAddress": "[parameters('emailReceiverAddress')]"
           }
-        ]
+        ],
+        "webhookReceivers": []
       }
     }
   ]
