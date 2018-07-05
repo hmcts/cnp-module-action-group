@@ -10,12 +10,6 @@
     },
     "alertEmailReceivers": {
       "type": "array"
-    },
-    "alertSmsReceivers": {
-      "type": "array"
-    },
-    "alertWebhookReceivers": {
-      "type": "array"
     }
   },
   "resources": [
