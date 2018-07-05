@@ -20,6 +20,10 @@
       "metadata": {
         "description": "Email address of the receiver"
       }
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "uksouth"
     }
   },
   "resources": [
