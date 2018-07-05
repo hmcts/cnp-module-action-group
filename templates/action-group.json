@@ -10,7 +10,6 @@
     },
     "emailReceiverName": {
       "type": "string",
-      "defaultValue": "Bulk print alerts",
       "metadata": {
         "description": "Name of the email receiver"
       }
