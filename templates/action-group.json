@@ -27,7 +27,7 @@
       "name": "[parameters('alertName')]",
       "type": "microsoft.insights/actionGroups",
       "apiVersion": "2017-04-01",
-      "location": "[parameters('location')]",
+      "location": "uksouth",
       "tags": {},
       "properties": {
         "groupShortName": "[parameters('alertShortName')]",
