@@ -8,8 +8,18 @@
     "alertShortName": {
       "type": "string"
     },
-    "alertEmailReceivers": {
-      "type": "array"
+    "emailReceiverName": {
+      "type": "string",
+      "defaultValue": "emailReceiver",
+      "metadata": {
+        "description": "Name of the email receiver"
+      }
+    },
+    "emailReceiverAddress": {
+      "type": "string",
+      "metadata": {
+        "description": "Email address of the receiver"
+      }
     }
   },
   "resources": [
@@ -22,16 +32,14 @@
       "properties": {
         "groupShortName": "[parameters('alertShortName')]",
         "enabled": true,
-        "copy": [
+        "smsReceivers": [],
+        "emailReceivers": [
           {
-            "name": "emailReceivers",
-            "count": "[length(parameters('alertEmailReceivers'))]",
-            "input": {
-              "name": "[parameters('alertEmailReceivers')[copyIndex('emailReceivers')].name]",
-              "emailAddress": "[parameters('alertEmailReceivers')[copyIndex('emailReceivers')].emailAddress]"
-            }
+            "name": "[parameters('emailReceiverName')]",
+            "emailAddress": "[parameters('emailReceiverAddress')]"
           }
-        ]
+        ],
+        "webhookReceivers": []
       }
     }
   ]
