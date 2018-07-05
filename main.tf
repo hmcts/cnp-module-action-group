@@ -13,8 +13,7 @@ resource "azurerm_template_deployment" "action-group" {
     env                                = "${var.env}"
     alertName                          = "${var.group_name}"
     alertShortName                     = "${var.group_short_name}"
-    alertEmailReceivers                = "${var.alert_email_receivers}"
-    alertSmsReceivers                  = "${var.alert_sms_receivers}"
-    alertWebhookReceivers              = "${var.alert_webhook_receivers}"
+    emailReceiverName                  = "${var.email_receiver_name}"
+    emailReceiverAddress               = "${var.email_receiver_address}"
   }
 }
