@@ -23,7 +23,7 @@
     },
     "location": {
       "type": "string",
-      "defaultValue": "uksouth"
+      "defaultValue": "global"
     }
   },
   "resources": [
