@@ -10,7 +10,6 @@ resource "azurerm_template_deployment" "action-group" {
 
   parameters = {
     location                           = "${var.location}"
-    env                                = "${var.env}"
     alertName                          = "${var.alert_name}"
     alertShortName                     = "${var.alert_short_name}"
     emailReceiverName                  = "${var.email_receiver_name}"
