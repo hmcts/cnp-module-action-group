@@ -1,6 +1,5 @@
 variable "location" {}
 variable "env" {}
-variable "subscription" {}
 variable "resourcegroup_name" {}
 variable "action_group_name" {}
 variable "short_name" {}
