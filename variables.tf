@@ -1,35 +1,8 @@
-variable "location" {
-  type = "string"
-}
-
-variable "env" {
-  type = "string"
-}
-
-variable "subscription" {
-  type = "string"
-}
-
-variable "resourcegroup_name" {
-  type = "string"
-}
-
-variable "group_name" {
-  type = "string"
-}
-
-variable "alert_name" {
-  type = "string"
-}
-
-variable "alert_short_name" {
-  type = "string"
-}
-
-variable "email_receiver_name" {
-  type = "string"
-}
-
-variable "email_receiver_address" {
-  type = "string"
-}
+variable "location" {}
+variable "env" {}
+variable "subscription" {}
+variable "resourcegroup_name" {}
+variable "action_group_name" {}
+variable "short_name" {}
+variable "email_receiver_name" {}
+variable "email_receiver_address" {}
