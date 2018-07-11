@@ -1,7 +1,21 @@
-variable "location" {}
-variable "env" {}
-variable "resourcegroup_name" {}
-variable "action_group_name" {}
-variable "short_name" {}
-variable "email_receiver_name" {}
-variable "email_receiver_address" {}
+variable "location" {
+  description = "The azure data center location"
+}
+variable "env" {
+  description = "The application insights environment"
+}
+variable "resourcegroup_name" {
+  description = "The name of the azure resource group"
+}
+variable "action_group_name" {
+  description = "The name to give to the new action group"
+}
+variable "short_name" {
+  description = "A short (12-character maximum) human-readable name for the action group"
+}
+variable "email_receiver_name" {
+  description = "The name of the only email recipient for this group"
+}
+variable "email_receiver_address" {
+  description = "The email address to associate with this action group"
+}
