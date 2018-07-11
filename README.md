@@ -13,7 +13,7 @@ The azure data center location.
 The application insights environment. Use `prod` for production, `sandbox` for sandbox, etc.
 
 #### `subscription`
-The application insights subscription name, such as `cmc-prod`.
+The application insights subscription name, such as `DCD-CNP-Prod`.
 
 #### `resourcegroup_name`
 The name of the azure resource group, such as `cmc-claim-store-prod`.

@@ -4,15 +4,15 @@ data "template_file" "actiongrouptemplate" {
 
 resource "azurerm_template_deployment" "action-group" {
   template_body       = "${data.template_file.actiongrouptemplate.rendered}"
-  name                = "${var.action_group_name}"
+  name                = "Create custom action group"
   resource_group_name = "${var.resourcegroup_name}"
   deployment_mode     = "Incremental"
 
   parameters = {
-    location                           = "${var.location}"
-    actionGroupName                    = "${var.action_group_name}"
-    shortName                          = "${var.short_name}"
-    emailReceiverName                  = "${var.email_receiver_name}"
-    emailReceiverAddress               = "${var.email_receiver_address}"
+    location             = "${var.location}"
+    actionGroupName      = "${var.action_group_name}"
+    shortName            = "${var.short_name}"
+    emailReceiverName    = "${var.email_receiver_name}"
+    emailReceiverAddress = "${var.email_receiver_address}"
   }
 }
