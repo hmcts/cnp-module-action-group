@@ -4,7 +4,7 @@ data "template_file" "actiongrouptemplate" {
 
 resource "azurerm_template_deployment" "action-group" {
   template_body       = "${data.template_file.actiongrouptemplate.rendered}"
-  name                = "Create custom action group"
+  name                = "${var.template_name}"
   resource_group_name = "${var.resourcegroup_name}"
   deployment_mode     = "Incremental"
 

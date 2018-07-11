@@ -1,5 +1,6 @@
 variable "location" {}
 variable "env" {}
+variable "template_name" {}
 variable "resourcegroup_name" {}
 variable "action_group_name" {}
 variable "short_name" {}
