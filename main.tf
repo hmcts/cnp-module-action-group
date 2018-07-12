@@ -16,3 +16,7 @@ resource "azurerm_template_deployment" "action-group" {
     emailReceiverAddress = "${var.email_receiver_address}"
   }
 }
+
+output "action_group_name" {
+  value = "${azurerm_template_deployment.action-group.parameters.actionGroupName}"
+}
