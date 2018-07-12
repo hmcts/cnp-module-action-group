@@ -1,30 +1,38 @@
 # moj-module-action-group
 
-A module that lets you create Action Groups in Azure
+A module that lets you create Action Groups in Azure.
 
 ## Variables
 
-### Contextual variables
+### Configuration
 
-#### `location`
-The azure data center location.
+All parameters are required by this module
 
-#### `env`
-The application insights environment. Use `prod` for production, `sandbox` for sandbox, etc.
+- `location` The azure data center location.
+- `env` The application insights environment. Use `prod` for production, `sandbox` for sandbox, etc.
+- `resourcegroup_name` The name of the azure resource group, such as `cmc-claim-store-prod`.
+- `action_group_name` The name to give to the new action group.
+- `short_name` A short (12-character maximum) human-readable name for the action group.
+- `email_receiver_name` The name of the only action created by this action group - by convention the name of the email recipient.
+- `email_receiver_address` The email address to associate with this action group.
 
-#### `resourcegroup_name`
-The name of the azure resource group, such as `cmc-claim-store-prod`.
+### Output
 
-### Action Group definition variables
+This module provides no outputs.
 
-#### `action_group_name`
-The name to give to the new action group.
+## Usage
 
-#### `short_name`
-A short (12-character maximum) human-readable name for the action group.
+The following example shows how to use the module to create an action group.
 
-#### `email_receiver_name`
-The name of the only action created by this action group - by convention the name of the email recipient.
-
-#### `email_receiver_address`
-The email address to associate with this action group.
+```terraform
+module "custom-action-group" {
+  source = "git@github.com:hmcts/cnp-module-action-group"
+  location = "${var.location}"
+  env = "prod"
+  resourcegroup_name = "${azurerm_resource_group.rg.name}"
+  action_group_name = "My Custom Action Group"
+  short_name = "custom AG"
+  email_receiver_name = "My Mailing List"
+  email_receiver_address = "mailinglist@hmcts.net"
+}
+```
