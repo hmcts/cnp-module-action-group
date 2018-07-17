@@ -18,7 +18,9 @@ All parameters are required by this module
 
 ### Output
 
-This module provides no outputs.
+The following variables are provided by the module for use in other modules
+
+- `action_group_name` The name of the newly created action group
 
 ## Usage
 
