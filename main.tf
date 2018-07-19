@@ -18,5 +18,5 @@ resource "azurerm_template_deployment" "action-group" {
 }
 
 output "action_group_name" {
-  value = "${azurerm_template_deployment.action-group.parameters.actionGroupName}"
+  value = "${var.action_group_name}"
 }
