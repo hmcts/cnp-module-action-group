@@ -8,7 +8,7 @@ A module that lets you create Action Groups in Azure.
 
 All parameters are required by this module
 
-- `location` The azure data center location.
+- `location` Currently only 'global' is allowed.
 - `env` The application insights environment. Use `prod` for production, `sandbox` for sandbox, etc.
 - `resourcegroup_name` The name of the azure resource group, such as `cmc-claim-store-prod`.
 - `action_group_name` The name to give to the new action group.
@@ -29,7 +29,7 @@ The following example shows how to use the module to create an action group.
 ```terraform
 module "custom-action-group" {
   source = "git@github.com:hmcts/cnp-module-action-group"
-  location = "${var.location}"
+  location = "global"
   env = "prod"
   resourcegroup_name = "${azurerm_resource_group.rg.name}"
   action_group_name = "My Custom Action Group"
