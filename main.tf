@@ -21,7 +21,7 @@ resource "azurerm_template_deployment" "action-group" {
     location             = "${var.location}"
     actionGroupName      = "${var.action_group_name}"
     shortName            = "${var.short_name}"
-    emailReceivers       = "${join(",", data.template_file.email_receivers.*.rendered)}"
+    emailReceivers       = "${jsonencode(format("[%s]", join(",", data.template_file.email_receivers.*.rendered)))}"
   }
 }
 
