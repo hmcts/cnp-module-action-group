@@ -27,13 +27,16 @@
       "location": "[parameters('location')]",
       "tags": {},
       "properties": {
-        "groupShortName": "[parameters('shortName')]",
-        "enabled": true,
-        "smsReceivers": [],
-        "emailReceivers": {
-          "value": "[parameters('emailReceivers')]"
-        },
-        "webhookReceivers": []
+        "mode": "Incremental",
+        "parameters": {
+          "groupShortName": "[parameters('shortName')]",
+          "enabled": true,
+          "smsReceivers": [],
+          "emailReceivers": {
+            "value": "[parameters('emailReceivers')]"
+          },
+          "webhookReceivers": []
+        }
       }
     }
   ]
