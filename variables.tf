@@ -16,4 +16,5 @@ variable "short_name" {
 variable "email_receivers" {
   type = "list"
   description = "The name of the only email recipient for this group"
+  default = []
 }
