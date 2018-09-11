@@ -30,7 +30,9 @@
         "groupShortName": "[parameters('shortName')]",
         "enabled": true,
         "smsReceivers": [],
-        "emailReceivers": "[parameters('emailReceivers')]",
+        "emailReceivers": {
+          "value": "[parameters('emailReceivers')]"
+        },
         "webhookReceivers": []
       }
     }
