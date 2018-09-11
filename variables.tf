@@ -13,9 +13,7 @@ variable "action_group_name" {
 variable "short_name" {
   description = "A short (12-character maximum) human-readable name for the action group"
 }
-variable "email_receiver_name" {
+variable "email_receivers" {
+  type = "list"
   description = "The name of the only email recipient for this group"
-}
-variable "email_receiver_address" {
-  description = "The email address to associate with this action group"
 }

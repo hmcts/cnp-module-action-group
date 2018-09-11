@@ -8,16 +8,10 @@
     "shortName": {
       "type": "string"
     },
-    "emailReceiverName": {
-      "type": "string",
+    "emailReceivers": {
+      "type": "array",
       "metadata": {
-        "description": "Name of the email receiver"
-      }
-    },
-    "emailReceiverAddress": {
-      "type": "string",
-      "metadata": {
-        "description": "Email address of the receiver"
+        "description": "List of email addresses and their names"
       }
     },
     "location": {
@@ -36,12 +30,7 @@
         "groupShortName": "[parameters('shortName')]",
         "enabled": true,
         "smsReceivers": [],
-        "emailReceivers": [
-          {
-            "name": "[parameters('emailReceiverName')]",
-            "emailAddress": "[parameters('emailReceiverAddress')]"
-          }
-        ],
+        "emailReceivers": "[parameters('emailReceivers')]",
         "webhookReceivers": []
       }
     }
