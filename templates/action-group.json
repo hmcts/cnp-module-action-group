@@ -30,9 +30,16 @@
         "groupShortName": "[parameters('shortName')]",
         "enabled": true,
         "smsReceivers": [],
-        "emailReceivers": {
-          "value": "[parameters('emailReceivers')]"
-        },
+        "copy": [
+          {
+            "name": "emailReceivers",
+            "count": "[length(parameters('emailReceivers'))]",
+            "input": {
+              "name": "[parameters('emailReceivers')[copyIndex('emailReceivers')].name]",
+              "emailAddress": "[parameters('emailReceivers')[copyIndex('emailReceivers')].email]"
+            }
+          }
+        ],
         "webhookReceivers": []
       }
     }

@@ -28,7 +28,7 @@ resource "azurerm_template_deployment" "action-group" {
     location             = "${var.location}"
     actionGroupName      = "${var.action_group_name}"
     shortName            = "${var.short_name}"
-    emailReceivers       = "${data.template_file.wrapped_email_receivers.rendered}"
+    emailReceivers       = "${var.email_receivers}"
   }
 }
 
