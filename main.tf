@@ -3,11 +3,18 @@ data "template_file" "actiongrouptemplate" {
 }
 
 data "template_file" "email_receivers" {
-  template = "${file("${path.module}/templates/email-receivers.json")}"
+  template = "${file("${path.module}/templates/email-receiver.json")}"
   count    = "${length(var.email_receivers)}"
   vars {
     email = "${element(values(var.email_receivers[count.index]), 0)}"
     name = "${element(keys(var.email_receivers[count.index]), 0)}"
+  }
+}
+
+data "template_file" "wrapped_email_receivers" {
+  template = "${file("${path.module}/templates/email-receivers.json")}"
+  vars {
+    value = "${join(",", data.template_file.email_receivers.*.rendered)}"
   }
 }
 
@@ -21,7 +28,7 @@ resource "azurerm_template_deployment" "action-group" {
     location             = "${var.location}"
     actionGroupName      = "${var.action_group_name}"
     shortName            = "${var.short_name}"
-    emailReceivers       = "${join(",", data.template_file.email_receivers.*.rendered)}"
+    emailReceivers       = "${data.template_file.wrapped_email_receivers.rendered}"
   }
 }
 
