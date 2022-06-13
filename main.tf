@@ -17,6 +17,4 @@ resource "azurerm_template_deployment" "action-group" {
   }
 }
 
-output "action_group_name" {
-  value = "${var.action_group_name}"
-}
+
