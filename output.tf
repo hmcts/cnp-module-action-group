@@ -3,6 +3,6 @@ output "action_group_name" {
 }
 
 output "action_group_id" {
-  value = azurerm_template_deployment.action-group.id
+  value = azurerm_template_deployment.action-group.outputs["actionGroupId"]
 }
 

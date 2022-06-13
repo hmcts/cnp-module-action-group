@@ -45,5 +45,11 @@
         "webhookReceivers": []
       }
     }
-  ]
+  ],
+  "outputs":{
+      "actionGroupId":{
+          "type":"string",
+          "value":"[resourceId('Microsoft.Insights/actionGroups',parameters('actionGroupName'))]"
+      }
+  }
 }
