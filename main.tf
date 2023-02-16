@@ -9,11 +9,11 @@ resource "azurerm_resource_group_template_deployment" "action-group" {
   deployment_mode     = "Incremental"
 
   parameters_content = jsonencode({
-    location             = var.location
-    actionGroupName      = var.action_group_name
-    shortName            = var.short_name
-    emailReceiverName    = var.email_receiver_name
-    emailReceiverAddress = var.email_receiver_address
+    location             = { value = var.location }
+    actionGroupName      = { value = var.action_group_name }
+    shortName            = { value = var.short_name }
+    emailReceiverName    = { value = var.email_receiver_name }
+    emailReceiverAddress = { value = var.email_receiver_address }
   }
 }
 
