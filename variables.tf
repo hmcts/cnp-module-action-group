@@ -19,3 +19,6 @@ variable "email_receiver_name" {
 variable "email_receiver_address" {
   description = "The email address to associate with this action group"
 }
+variable "short_name_var" {
+default = ""
+}
