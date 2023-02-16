@@ -14,6 +14,7 @@ resource "azurerm_resource_group_template_deployment" "action-group" {
     shortName            = { value = var.short_name }
     emailReceiverName    = { value = var.email_receiver_name }
     emailReceiverAddress = { value = var.email_receiver_address }
+    commonTags           = { value = base64encode(jsonencode(var.common_tags))}
   }
 }
 
