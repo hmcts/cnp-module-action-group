@@ -25,10 +25,11 @@
       "defaultValue": "global"
     }
     "tags": {
-      "type": "string",
+      "type": "object",
       "metadata": {
         "description": "Tags for the action group"
-      }
+      },
+      "defaultValue": {}
     }
   },
   "resources": [
