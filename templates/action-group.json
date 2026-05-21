@@ -24,6 +24,12 @@
       "type": "string",
       "defaultValue": "global"
     }
+    "tags": {
+      "type": "string",
+      "metadata": {
+        "description": "Tags for the action group"
+      }
+    }
   },
   "resources": [
     {
