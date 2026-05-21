@@ -31,7 +31,7 @@
       "type": "microsoft.insights/actionGroups",
       "apiVersion": "2017-04-01",
       "location": "[parameters('location')]",
-      "tags": {},
+      "tags": "[parameters('tags')]",
       "properties": {
         "groupShortName": "[parameters('shortName')]",
         "enabled": true,
