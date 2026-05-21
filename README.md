@@ -37,5 +37,6 @@ module "custom-action-group" {
   short_name = "custom AG"
   email_receiver_name = "My Mailing List"
   email_receiver_address = "mailinglist@hmcts.net"
+  tags = "My custom tags"
 }
 ```
