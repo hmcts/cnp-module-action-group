@@ -23,7 +23,7 @@
     "location": {
       "type": "string",
       "defaultValue": "global"
-    }
+    },
     "tags": {
       "type": "object",
       "metadata": {
